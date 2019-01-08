@@ -57,7 +57,7 @@
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "diskStorageType": "Standard_LRS",
-    "publicIPAddressName": "AzureAppO.mardolf.com",
+    "publicIPAddressName": "azureappo2",
     "publicIPAddressType": "Dynamic",
     "vmName": "MyDockerVM",
     "virtualNetworkName": "MyVNETD",

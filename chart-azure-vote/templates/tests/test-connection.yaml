@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "chart-azure-vote.fullname" . }}-test-connection"
+  labels:
+    app.kubernetes.io/name: {{ include "chart-azure-vote.name" . }}
+    helm.sh/chart: {{ include "chart-azure-vote.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['{{ include "chart-azure-vote.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

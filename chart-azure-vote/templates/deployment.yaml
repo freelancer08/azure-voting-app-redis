@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: vote-back-{{.Release.Name}}
+  name: azure-vote-back
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: vote-back-{{.Release.Name}}
+        app: azure-vote-back
     spec:
       containers:
-      - name: vote-back-{{.Release.Name}}
+      - name: azure-vote-back
         image: redis
         ports:
         - containerPort: 6379
@@ -19,7 +19,7 @@ spec:
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: vote-front-{{.Release.Name}}
+  name: azure-vote-front
 spec:
   replicas: 1
   strategy:
@@ -30,12 +30,11 @@ spec:
   template:
     metadata:
       labels:
-        app: vote-front-{{.Release.Name}}
+        app: azure-vote-front
     spec:
       containers:
       - name: azure-vote-front
-        image: testappsacr.azurecr.io/testapps
-        imagePullPolicy: Always
+        image: testappsacr.azurecr.io/testapps:36
         ports:
         - containerPort: 80
         resources:
@@ -45,12 +44,4 @@ spec:
             cpu: 500m
         env:
         - name: REDIS
-          value: vote-back-{{.Release.Name}}
-        - name: TITLE
-          value: {{ .Values.title }}
-        - name: VOTE1VALUE
-          value: {{ .Values.value1 }}
-        - name: VOTE2VALUE
-          value: {{ .Values.value2 }}
-
-# Add if operator to env vars
+          value: "azure-vote-back"

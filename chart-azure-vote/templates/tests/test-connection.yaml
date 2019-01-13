@@ -14,5 +14,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args:  ['{{ include "chart-azure-vote.fullname" . }}:{{ .Values.service.port }}']
+      args:  ['{{ include "chart-azure-vote.fullname" . }}:80']
   restartPolicy: Never

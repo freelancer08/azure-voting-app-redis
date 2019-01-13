@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: azure-vote-front
-        image: testappsacr.azurecr.io/testapps
+        image: testappsacr.azurecr.io/testapps:{{ .Values.image.tag }}
         ports:
         - containerPort: 80
 #        resources:

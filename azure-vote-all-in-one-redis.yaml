@@ -44,7 +44,7 @@ spec:
     spec:
       containers:
       - name: azure-vote-front
-        image: freelancer08/demo
+        image: freelancer08/demo:{{REPO_IMAGE_VERSION}}
         ports:
         - containerPort: 80
 #        resources:

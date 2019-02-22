@@ -43,7 +43,7 @@ div#results {
     margin: 0 auto;
     width: 500px;
     text-align: center;
-    font-size:30px;
+    font-size:24px;
     font-family:Helvetica;  
 }
 
@@ -89,22 +89,22 @@ div#results {
 .button3 {
     background-color: white;
     color: black;
-    border: 2px solid #555555;
+    border: 2px solid #b0c023;
 }
 
 .button3:hover {
-    background-color: #555555;
+    background-color: #b0c023;
     color: white;
 }
 
 .button4 {
     background-color: white;
     color: black;
-    border: 2px solid #555555;
+    border: 2px solid #b40aac;
 }
 
 .button4:hover {
-    background-color: #555555;
+    background-color: #b40aac;
     color: white;
 }
 

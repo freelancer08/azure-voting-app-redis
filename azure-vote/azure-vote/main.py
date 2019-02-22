@@ -57,7 +57,7 @@ if app.config['SHOWHOST'] == "true":
 # Init Redis
 if not r.get(button1): r.set(button1,0)
 if not r.get(button2): r.set(button2,0)
-if not r.get(button3): r.set(button4,0)
+if not r.get(button3): r.set(button3,0)
 if not r.get(button4): r.set(button4,0)
 
 @app.route('/', methods=['GET', 'POST'])
